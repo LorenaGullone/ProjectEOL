@@ -1,0 +1,24 @@
+<Esame>
+    <Domanda>
+        <Testo> Che tipo di design pattern è Builder </Testo>
+        <Opzione> creazionale </Opzione>
+        <Opzione> strutturale </Opzione>
+        <Opzione> comportamentale </Opzione>
+        <Risposta> 1 </Risposta>
+    </Domanda>
+    <Domanda>
+        <Testo> Tra i principi dell'ingegneria del software si ha </Testo>
+        <Opzione> Disorganizzazione </Opzione>
+        <Opzione> Modularità </Opzione>
+        <Opzione> Bassa generalizzazione </Opzione>
+        <Risposta> 2 </Risposta>
+    </Domanda>
+    <Domanda>
+        <Testo> Quando è importante eseguire il testing del software </Testo>
+        <Opzione> mai </Opzione>
+        <Opzione> solo in alcuni casi </Opzione>
+        <Opzione> sempre </Opzione>
+        <Risposta> 3 </Risposta>
+    </Domanda>
+
+</Esame>

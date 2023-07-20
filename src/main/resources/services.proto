@@ -1,0 +1,93 @@
+syntax = "proto3";
+option java_package = "proto";
+
+
+service Serverservice {
+  rpc available_exams(ExamsRequest) returns (stream ExamsReply) {}
+  rpc exam_booking (BookingRequest) returns (BookingReply) {}
+  rpc start_exam(StartRequest) returns (StartReply) {}
+  rpc next_question(NextQuestionRequest) returns (NextQuestionReply) {}
+  rpc submit_answer(AnswerRequest) returns (AnswerReply) {}
+  rpc result(ResultRequest) returns (ResultReply) {}
+  rpc correction(ModuleRequest) returns (stream ModuleReply) {}
+}
+
+message BookingRequest {
+  int32 idEsame = 1;
+  int32 matricola = 2;
+  string cf = 3;
+  string address = 4;
+  int32 port = 5;
+}
+
+message BookingReply {
+  int32 numPrenotazione = 1;
+}
+
+message ExamsRequest{
+  int32 matricola = 1;
+  string cf = 2;
+}
+
+message ExamsReply {
+  int32 idEsame = 1;
+  string type = 2;
+  int64 startDate = 3;
+  bool status = 4;
+  int32 questions = 5;
+  int64 durata = 6;
+}
+
+message StartRequest{
+  int32 idEsame = 1;
+  int32 matricola = 2;
+  string cf = 3;
+}
+
+message StartReply{
+  bool procedi = 1;
+}
+
+message NextQuestionRequest{
+  int32 idEsame = 1;
+  int32 number_question = 2;
+}
+
+message NextQuestionReply{
+  int32 number_question = 1;
+  string question = 2;
+  string option1 = 3;
+  string option2 = 4;
+  string option3 = 5;
+}
+
+message ResultRequest{
+  int32 matricola = 1;
+  int32 idEsame = 2;
+}
+
+message ResultReply{
+  int32 punteggio = 1;
+  int32 idEsame = 2;
+}
+
+message ModuleRequest{
+  int32 idEsame = 1;
+}
+
+message ModuleReply{
+  string question = 1;
+  string answer = 2;
+}
+
+message AnswerRequest{
+  int32 matricola = 1;
+  int32 question = 2;
+  int32 answer = 3;
+  int32 idEsame = 4;
+}
+
+message AnswerReply{
+  bool processata = 1;
+  bool tempoScaduto = 2;
+}
